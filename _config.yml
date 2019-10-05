@@ -1,1 +1,3 @@
 theme: jekyll-theme-cayman
+title: Auto Rally Position and Velocity Estimation From Raw Camera Images
+description: Using camera images to determine the position and oreintation of other rally vehicles in a high speed setting.
