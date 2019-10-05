@@ -1,6 +1,13 @@
 ## Problem Statement
 To track [autorally](https://arxiv.org/pdf/1806.00678.pdf) vehicle pose and twist in 3D of a leading vehicle from the on board camera of a chasing vehicle.
 
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=FbcGs-XoiUw">
+    <img src="https://img.youtube.com/vi/FbcGs-XoiUw/0.jpg"/>
+  </a>
+</p>
+
 ## Mission Statement
 To track the 3D pose and twist of  a leading autorally vehicle from the onboard camera of a chasing vehicle. The input is a sequence of images which may or may not contain N leading vehicles. The output would be the 3D pose and twist of the N leading vehicles relative to the chasing vehicle. The purpose of the detector is to be used in multiagent research where direct communication is not allowed but the relative pose of the vehicles will be used for motion planning.
 
