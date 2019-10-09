@@ -1,5 +1,5 @@
-## Problem Statement
-To track [autorally](https://arxiv.org/pdf/1806.00678.pdf) vehicle pose (position & orientation) and twist (linear and angular velocity) in 3D of a leading vehicle from the on-board camera of a chasing vehicle. The system would be fed a sequence of images from a monocular camera, and the output would be a real-time estimate of the leading vehicle's pose and twist relative to the chasing vehicle. 
+# Problem Statement
+To track [autorally](https://arxiv.org/pdf/1806.00678.pdf) vehicle pose (position & orientation) and twist (linear and angular velocity) in 3D of a leading vehicle from the on-board camera of a chasing vehicle. The system would be fed a sequence of images from a monocular camera, and the output would be a real-time estimate of the leading vehicle's pose and twist relative to the chasing vehicle. The estimated poses will be used in a multiagent scenario where inter-vehicle communication is not allowed but knowledge of the relative motion is essential.
 
 
 <p align="center">
@@ -9,8 +9,7 @@ To track [autorally](https://arxiv.org/pdf/1806.00678.pdf) vehicle pose (positio
   Video demonstrating a single autorally vehicle operating around a track at verious velocities.
 </p>
 
-## Mission Statement
-To track the 3D pose and twist of  a leading autorally vehicle from the onboard camera of a chasing vehicle. The input is a sequence of images which may or may not contain N leading vehicles. The output would be the 3D pose and twist of the N leading vehicles relative to the chasing vehicle. The purpose of the detector is to be used in multiagent research where direct communication is not allowed but the relative pose of the vehicles will be used for motion planning.
+# Approach
 
 ## Technical Approach
 Apply single shot 6D object pose detection to estimate autorally vehicle pose and twist, then use these estimates to predict future state. For now, we plan to make use of the framework proposed by Tekin et. al. in [Real-Time Seamless Single Shot 6D Object Pose Prediction](https://arxiv.org/pdf/1711.08848.pdf) to track pose, then we aim to derive these pose estimates over time to obtain velocity and acceleration estimates.
