@@ -54,11 +54,25 @@ We will have to generate our own dataset since there is no large dataset of mult
 2. _Stationary_ tracking of another vehicle on the track.
   * Expect velocity and acceleration estimates of 0 m/s and 0m/s^2, respectively.
   
+3. Tracking of a vehicle in a straight line at low speeds with constant velocity.
+  * Expect velocity and acceleration estimates of 3 m/s and 0m/s^2, respectively.
 
-Slow moving tracking of vehicle while moving straight (3 m/s)
-Medium speed tracking of a vehicle while moving straight (6 m/s)
-Slow moving tracking of a vehicle driving around an oval track (3 m/s)
-Medium moving tracking of a vehicle driving around an oval track (6 m/s)
+4. Tracking of a vehicle in a straight line at medium speeds with constant velocity.
+  * Expect velocity and acceleration estimates of 6 m/s and 0m/s^2, respectively.
+  
+5. Tracking of a vehicle in a straight line with constant acceleration.
+  * Expect velocity to increase from 0 to 6m/s and acceleration to remain constant at 1m/s^2.
+ 
+6. Tracking of a vehicle in an oval track line at low speeds with constant velocity.
+  * Expect velocity and acceleration estimates of 3 m/s and 0m/s^2, respectively.
+ 
+7. Tracking of a vehicle in an oval track line at medium speeds with constant velocity.
+  * Expect velocity and acceleration estimates of 6 m/s and 0m/s^2, respectively.
+
+8. Tracking of a vehicle in an oval track with constant acceleration.
+  * Expect velocity to increase from 0 to 6m/s and acceleration to remain constant at 1m/s^2.
+
+
+# Experimental Outcomes
 Success for the project is defined by our ability to accurately and reliably estimate the relative pose and twist of the leading vehicle relative to the chasing vehicle. This would be a useful step towards multi-agent racing on the autorally platform.
 
-https://arxiv.org/pdf/1909.07707.pdf 
