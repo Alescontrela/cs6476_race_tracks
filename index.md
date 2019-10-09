@@ -1,11 +1,12 @@
 ## Problem Statement
-To track [autorally](https://arxiv.org/pdf/1806.00678.pdf) vehicle pose and twist in 3D of a leading vehicle from the on board camera of a chasing vehicle.
+To track [autorally](https://arxiv.org/pdf/1806.00678.pdf) vehicle pose (position & orientation) and twist (linear and angular velocity) in 3D of a leading vehicle from the on-board camera of a chasing vehicle. The system would be fed a sequence of images from a monocular camera, and the output would be a real-time estimate of the leading vehicle's pose and twist relative to the chasing vehicle. 
 
 
 <p align="center">
   <a href="https://www.youtube.com/watch?v=FbcGs-XoiUw">
     <img src="https://img.youtube.com/vi/FbcGs-XoiUw/0.jpg"/>
-  </a>
+  </a> <br/>
+  Video demonstrating a single autorally vehicle operating around a track at verious velocities.
 </p>
 
 ## Mission Statement
@@ -20,7 +21,7 @@ The data collection process will consist of driving two autorally vehicles on a 
 
 We will use the provided implementation of the 6D pose estimate provided by the authors. The AutoRally platform and core code will be used as provided [here](https://github.com/AutoRally/autorally). We will have to implement an auto labeller ourselves along with training a network that will effectively work at the given task.
 
-## Experimental setup:
+## Experimental Setup:
 Stationary tracking of another vehicle in lab. Expect velocity and acceleration estimates of 0 m/s and 0m/s^2, respectively.
 Stationary tracking of another vehicle on the track. Expect velocity and acceleration estimates of 0 m/s and 0m/s^2, respectively.
 Slow moving tracking of vehicle while moving straight (3 m/s)
