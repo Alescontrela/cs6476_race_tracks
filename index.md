@@ -1,3 +1,4 @@
+Team Members: Alejandro Escontrela, Lishi Sun, Jason Gibson
 Canonical link: https://alescontrela.github.io/cs6476_race_tracks/
 
 # Problem Statement
