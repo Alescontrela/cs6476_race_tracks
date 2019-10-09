@@ -23,16 +23,38 @@ Visual tracking of multiple vehicles can be achieved via a range of technqiues, 
 
 Accurately estimating the linear/angular velocity and linear acceleration of the lead vehicles will require the application of filtering techniques, to ensure that the estimates are robust to noise. 
 
+<p align="center">
+  <img width="60%" src="ouput_viz.png"/> <br/>
+  Figure 1: Sample outputs from the 6D pose estimation algorithm.
+</p>
+
+At a high level, the system's API would behave as follows:
+
+**Inputs:**
+  * A real-time stream of camera images obtained from a monocular camera onboard a chasing autorally vehicle containing a variable number of leading vehicles.
+**Outputs:**
+  * An output for each detected leading vehicle, containing:
+    * A unique identifier for the vehicle.
+    * The vehicle's XYZ position relative to the camera frame.
+    * The vehicle's linear velocity and acceleration relative to the camera frame.
+    * The vehicle's angular velocity relative to the camera frame.
 
 
-## Experimental Approaches
-The data collection process will consist of driving two autorally vehicles on a dirt track, with one vehicle chasing the other. The vehicles will be traveling at a low speed around a circular track. Global state estimates, containing the position and velocity of each vehicle, are gathered continuously. We will develop an auto labeller that will use global estimates to generate highly accurate positions of the vehicles in each frame for training. We will have to generate our own dataset since there is no large dataset of multiple vehicles driving autonomously on the same track.
+## Data Gathering
+The data collection process will consist of driving two autorally vehicles on a dirt track, with one vehicle chasing the other. The vehicles will be traveling at a low speed around a circular track. Global state estimates, containing the position and velocity of each vehicle, are gathered continuously via an [extended kalman filter](https://en.wikipedia.org/wiki/Extended_Kalman_filter) (EKF). We will develop an auto labeller that will use these global estimates to generate highly accurate positions of the vehicles in each frame for training.
 
-We will use the provided implementation of the 6D pose estimate provided by the authors. The AutoRally platform and core code will be used as provided [here](https://github.com/AutoRally/autorally). We will have to implement an auto labeller ourselves along with training a network that will effectively work at the given task.
+We will use the Single Shot 6D Object Pose Prediction implementation provided by the paper's authors, the AutoRally platform and core code as provided [here](https://github.com/AutoRally/autorally), and implement an auto-labeler that will provide the data required to train the 6D pose estimation network.
 
-## Experimental Setup:
-Stationary tracking of another vehicle in lab. Expect velocity and acceleration estimates of 0 m/s and 0m/s^2, respectively.
-Stationary tracking of another vehicle on the track. Expect velocity and acceleration estimates of 0 m/s and 0m/s^2, respectively.
+The auto-labeler will produce leading vehicle's bounding box vertices in the camera frame given the global state estimates for multiple vehicles.
+
+We will have to generate our own dataset since there is no large dataset of multiple vehicles driving autonomously on the same track. Our data gathering process will be carried as follows:
+1. _Stationary_ tracking of another vehicle in the lab. 
+  * Expect velocity and acceleration estimates of 0 m/s and 0m/s^2, respectively.
+
+2. _Stationary_ tracking of another vehicle on the track.
+  * Expect velocity and acceleration estimates of 0 m/s and 0m/s^2, respectively.
+  
+
 Slow moving tracking of vehicle while moving straight (3 m/s)
 Medium speed tracking of a vehicle while moving straight (6 m/s)
 Slow moving tracking of a vehicle driving around an oval track (3 m/s)
