@@ -9,10 +9,20 @@ To track [autorally](https://arxiv.org/pdf/1806.00678.pdf) vehicle pose (positio
   Video demonstrating a single autorally vehicle operating around a track at verious velocities.
 </p>
 
+---
+
 # Approach
 
 ## Technical Approach
-Apply single shot 6D object pose detection to estimate autorally vehicle pose and twist, then use these estimates to predict future state. For now, we plan to make use of the framework proposed by Tekin et. al. in [Real-Time Seamless Single Shot 6D Object Pose Prediction](https://arxiv.org/pdf/1711.08848.pdf) to track pose, then we aim to derive these pose estimates over time to obtain velocity and acceleration estimates.
+
+The first step in our approach is to apply the pose estimation algorithm desribed in [Real-Time Seamless Single Shot 6D Object Pose Prediction](https://arxiv.org/pdf/1711.08848.pdf). This algorithm extends the [YOLO](https://arxiv.org/pdf/1506.02640.pdf) (You Only Look Once) state-of-the-art object detection architecture to predict pose in the camera frame.
+
+The aforementioned framework is limited to detecting object poses in a single frame. As such, useful application of this framework to autorally requires significant enhancement. First, keeping track of multiple vehicles through time is necessary when estimating the vehicle's reward functions. Additionally, obtaining a robust estimate of the lead vehicles' velocity and acceleration is required to predict their future motion.
+
+Visual tracking of multiple vehicles can be achieved via a range of technqiues, including but not limited to [VOT](http://www.votchallenge.net/), [TLD](https://www.learnopencv.com/object-tracking-using-opencv-cpp-python/), [GOTURN](http://davheld.github.io/GOTURN/GOTURN.html), etc. Our aim is to explore the space of object tracking and apply the technique which best fits our needs.
+
+Accurately estimating the linear/angular velocity and linear acceleration of the lead vehicles will require the application of filtering techniques, to ensure that the estimates are robust to noise. 
+
 
 
 ## Experimental Approaches
