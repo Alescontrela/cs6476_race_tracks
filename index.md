@@ -1,3 +1,5 @@
+Canonical link: https://alescontrela.github.io/cs6476_race_tracks/
+
 # Problem Statement
 To track [autorally](https://arxiv.org/pdf/1806.00678.pdf) vehicle pose (position & orientation) and twist (linear and angular velocity) in 3D of a leading vehicle from the on-board camera of a chasing vehicle. The system will be fed a sequence of images from a monocular camera, and the output will be a real-time estimate of the leading vehicle's pose and twist relative to the chasing vehicle. The estimated poses will be used in a multiagent scenario where inter-vehicle communication is not allowed but knowledge of the relative motion is essential.
 
