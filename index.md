@@ -154,5 +154,5 @@ We noticed that this network sometimes fails to predict accurate orientations, a
   Figure 7: Sample network prediction for a model trained on the LINEMOD dataset with some orientation error.
 </p>
 
-View more sample outputs here: https://colab.research.google.com/drive/1BabqYyXQSv527-GPTiWV3NxxZRzLcbjN
+View more sample outputs [here](https://colab.research.google.com/drive/1BabqYyXQSv527-GPTiWV3NxxZRzLcbjN)
  
