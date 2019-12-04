@@ -199,6 +199,15 @@ Additionally, extensions to this project can focus on improving AutoLabeler accu
 
 The final extension would be to incorporate a factor graph to the actual vehicle tracking task. We would have the vehicle poses and velocities as variables in the factor graph. We would use the GTSAM factor graph library to estimate the locations. The state estimator would be a unary factor on the chasing vehicle pose and velocity as well as connecting successive states (motion model). The camera detections would be a between factor on the chasing vehicle pose and the detected vehicle pose. Finally the motion of the chasing vehicle would be constrained by the dynamics model applied to the other vehicle. We can do this because in a game theoretic setting we would have an estimate of the controk vector of the other vehicle.
 
+## Source Code
+
+Singleshotpose Pipeline:
+* Source Code: https://drive.google.com/drive/folders/1L010K_HJssbSyrO2Z6kS01TPyI75gr91?usp=sharing
+* Training notebook: https://colab.research.google.com/drive/1-5-YQNY90pWLXitYQs5HsIHCf5urrYin
+* Validation notebook: https://colab.research.google.com/drive/1r95hQgiW9iGAhHYawdIGP5LluTulsZJw
+
+Auto-Labeler Code: https://github.com/JasonGibson274/autorally/tree/vehicle_tracker/autorally_vision
+
 ## References
 Tekin, Bugra, Sudipta N. Sinha, and Pascal Fua. "Real-time seamless single shot 6d object pose prediction." Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018.
 
