@@ -174,7 +174,7 @@ The error for the real world dataset is higher on average. This reflects the fac
 The following video shows both the auto-labeler followed by the pose predictor:
 
 <p align="center">
-  <a href="https://youtu.be/oWBPvHWlFuQ">
+  <a href="https://youtu.be/LQwgv9GvADQ">
     <img src="https://img.youtube.com/vi/oWBPvHWlFuQ/0.jpg"/>
   </a> <br/>
   Video demonstrating autolabeler and singleshotpose model predictions.
